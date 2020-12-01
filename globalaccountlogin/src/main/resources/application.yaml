@@ -1,0 +1,11 @@
+server:  port: 9000
+
+spring:
+  application:
+    name: accountloginservce
+  datasource:
+    url: jdbc:mysql://localhost:3306/security    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: oauthjwtuser
+    password: oauthjwtuser.1    initialization-mode: always
+  jpa:
+    show-sql: true    hibernate:      ddl-auto: create-drop          security:  jwt:    key-store: classpath:keystore.jks    key-store-password: authserve.1    key-pair-alias: myloginkey    key-pair-password: authserv.1  oauth2:    authorization:      token-key-access: permitAll()logging:  level:    root: INFO    com.ibm.accountloginservice: DEBUG    org.springframework.web: INFO    org.springframework.web.HttpLogging: DEBUG    org.springframework.security: DEBUG    org.springframework.security.oauth2: DEBUG
